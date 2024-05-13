@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Meli
+
+  Created by Ricardo Santana on 11/05/24.
+  
+*/
+
+// MARK: Search Screen
+"searchBarPlaceholder" = "Buscar no Mercado Livre";
