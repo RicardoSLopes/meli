@@ -24,6 +24,7 @@
 		21617C132BF007B800284729 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21617C112BF007B800284729 /* Localizable.strings */; };
 		21617C182BF0097500284729 /* LocalizationKey+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C172BF0097500284729 /* LocalizationKey+Value.swift */; };
 		21617C1D2BF19D2C00284729 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C1C2BF19D2C00284729 /* CustomNavigationController.swift */; };
+		21617C202BF2307200284729 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C1F2BF2307200284729 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		21617C122BF007B800284729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21617C172BF0097500284729 /* LocalizationKey+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizationKey+Value.swift"; sourceTree = "<group>"; };
 		21617C1C2BF19D2C00284729 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		21617C1F2BF2307200284729 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		21617C092BEFE74400284729 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				21617C1E2BF2305C00284729 /* Components */,
 				21617C1B2BF19D1700284729 /* Common */,
 				21617C102BF0079600284729 /* Localizable */,
 				21617C0D2BF0063200284729 /* Localization */,
@@ -197,6 +200,14 @@
 				21617C1C2BF19D2C00284729 /* CustomNavigationController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		21617C1E2BF2305C00284729 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				21617C1F2BF2307200284729 /* SearchBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +351,7 @@
 				21617C1D2BF19D2C00284729 /* CustomNavigationController.swift in Sources */,
 				21617C0C2BEFE7B000284729 /* UISearchBar.swift in Sources */,
 				21617BCE2BEFBE3B00284729 /* AppDelegate.swift in Sources */,
+				21617C202BF2307200284729 /* SearchBar.swift in Sources */,
 				21617BD02BEFBE3B00284729 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

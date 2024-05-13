@@ -14,11 +14,11 @@ class SearchView: UIView {
         return containerView
     }()
     
-    lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.setBarStyle()
-        return searchBar
-    }()
+//    lazy var searchBar: UISearchBar = {
+//        let searchBar = UISearchBar()
+//        searchBar.setBarStyle()
+//        return searchBar
+//    }()
     
     init() {
         super.init(frame: .zero)
@@ -37,22 +37,22 @@ class SearchView: UIView {
     
     func setupHierarchy() {
         self.addSubview(self.containerView)
-        containerView.addSubview(searchBar)
+//        containerView.addSubview(searchBar)
     }
     
     func setupConstraints() {
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
+//        searchBar.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             containerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            containerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            containerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
             
-            searchBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
-            searchBar.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
-            searchBar.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8)
+//            searchBar.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
+//            searchBar.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
+//            searchBar.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8)
         ])
     }
 }

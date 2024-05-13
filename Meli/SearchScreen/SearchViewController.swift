@@ -11,12 +11,15 @@ class SearchViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
     private let searchView = SearchView()
+    private let searchBar = SearchBar()
         
         override func viewDidLoad() {
             super.viewDidLoad()
             self.view = searchView
             self.view.backgroundColor = .white
-            navigationItem.titleView = searchView.searchBar
+            
+            searchBar.delegate = self
+            navigationItem.titleView = searchBar
 
             let appearance = UINavigationBarAppearance()
             appearance.backgroundColor = .yellow
@@ -30,8 +33,21 @@ class SearchViewController: UIViewController {
             super.viewWillAppear(animated)
             self.navigationController?.navigationBar.isHidden = false
         }
+}
+
+extension SearchViewController: UISearchBarDelegate {
     
-    func SearchButtonTapped() {
-        // coordinator?
-    }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+           searchBar.showsCancelButton = true
+       }
+
+       func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+           searchBar.showsCancelButton = false
+       }
+       
+       func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+           searchBar.showsCancelButton = false
+           searchBar.text = ""
+           searchBar.resignFirstResponder()
+       }
 }

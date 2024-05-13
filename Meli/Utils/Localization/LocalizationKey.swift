@@ -11,6 +11,7 @@ public enum LocalizationKey: String {
     
     // MARK: Search Screen
     case searchBarPlaceholder
+    case cancelSearch
     
     public var key: String {
         rawValue
