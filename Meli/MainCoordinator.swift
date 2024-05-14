@@ -16,7 +16,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let searchViewController = SearchViewController()
+        let viewModel = SearchViewModel(network: Network())
+        let searchViewController = SearchViewController(viewModel: viewModel)
         searchViewController.coordinator = self
         navigationController.pushViewController(searchViewController, animated: true)
     }

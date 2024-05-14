@@ -19,12 +19,22 @@
 		21617C002BEFBF3C00284729 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617BFF2BEFBF3C00284729 /* Coordinator.swift */; };
 		21617C062BEFC09C00284729 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C052BEFC09C00284729 /* SearchViewController.swift */; };
 		21617C082BEFC11100284729 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C072BEFC11100284729 /* SearchView.swift */; };
-		21617C0C2BEFE7B000284729 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C0B2BEFE7B000284729 /* UISearchBar.swift */; };
+		21617C0C2BEFE7B000284729 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C0B2BEFE7B000284729 /* UISearchBarExtension.swift */; };
 		21617C0F2BF0065100284729 /* LocalizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C0E2BF0065100284729 /* LocalizationKey.swift */; };
 		21617C132BF007B800284729 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21617C112BF007B800284729 /* Localizable.strings */; };
-		21617C182BF0097500284729 /* LocalizationKey+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C172BF0097500284729 /* LocalizationKey+Value.swift */; };
-		21617C1D2BF19D2C00284729 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C1C2BF19D2C00284729 /* CustomNavigationController.swift */; };
+		21617C182BF0097500284729 /* LocalizationKeyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C172BF0097500284729 /* LocalizationKeyExtension.swift */; };
+		21617C1D2BF19D2C00284729 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C1C2BF19D2C00284729 /* UINavigationControllerExtension.swift */; };
 		21617C202BF2307200284729 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C1F2BF2307200284729 /* SearchBar.swift */; };
+		21617C242BF2C95700284729 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C232BF2C95700284729 /* SearchViewModel.swift */; };
+		21617C272BF2C98900284729 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C262BF2C98900284729 /* Constants.swift */; };
+		21617C292BF2CBE900284729 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C282BF2CBE900284729 /* Network.swift */; };
+		21617C2C2BF2CCC600284729 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C2B2BF2CCC600284729 /* Product.swift */; };
+		21617C2E2BF2D6F300284729 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C2D2BF2D6F200284729 /* UIViewExtension.swift */; };
+		21617C302BF2D76600284729 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C2F2BF2D76600284729 /* ProductTableViewCell.swift */; };
+		21617C332BF2D82E00284729 /* ViewCodeSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C322BF2D82E00284729 /* ViewCodeSetup.swift */; };
+		21617C352BF2DB2E00284729 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C342BF2DB2E00284729 /* UIImageViewExtension.swift */; };
+		21617C372BF2DD8300284729 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C362BF2DD8300284729 /* IntExtension.swift */; };
+		21617C392BF2DDFD00284729 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C382BF2DDFD00284729 /* UITableViewCellExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +71,22 @@
 		21617BFF2BEFBF3C00284729 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		21617C052BEFC09C00284729 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		21617C072BEFC11100284729 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		21617C0B2BEFE7B000284729 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		21617C0B2BEFE7B000284729 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
 		21617C0E2BF0065100284729 /* LocalizationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKey.swift; sourceTree = "<group>"; };
 		21617C122BF007B800284729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		21617C172BF0097500284729 /* LocalizationKey+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizationKey+Value.swift"; sourceTree = "<group>"; };
-		21617C1C2BF19D2C00284729 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		21617C172BF0097500284729 /* LocalizationKeyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeyExtension.swift; sourceTree = "<group>"; };
+		21617C1C2BF19D2C00284729 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		21617C1F2BF2307200284729 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		21617C232BF2C95700284729 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		21617C262BF2C98900284729 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		21617C282BF2CBE900284729 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		21617C2B2BF2CCC600284729 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		21617C2D2BF2D6F200284729 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		21617C2F2BF2D76600284729 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		21617C322BF2D82E00284729 /* ViewCodeSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeSetup.swift; sourceTree = "<group>"; };
+		21617C342BF2DB2E00284729 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		21617C362BF2DD8300284729 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		21617C382BF2DDFD00284729 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +137,8 @@
 		21617BCC2BEFBE3B00284729 /* Meli */ = {
 			isa = PBXGroup;
 			children = (
+				21617C2A2BF2CC6D00284729 /* Model */,
+				21617C252BF2C96B00284729 /* Network */,
 				21617C092BEFE74400284729 /* Utils */,
 				21617C042BEFC07500284729 /* SearchScreen */,
 				21617BCD2BEFBE3B00284729 /* AppDelegate.swift */,
@@ -151,8 +173,8 @@
 		21617C042BEFC07500284729 /* SearchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				21617C052BEFC09C00284729 /* SearchViewController.swift */,
-				21617C072BEFC11100284729 /* SearchView.swift */,
+				21617C222BF2C93600284729 /* View */,
+				21617C212BF2C92B00284729 /* View Model */,
 			);
 			path = SearchScreen;
 			sourceTree = "<group>";
@@ -160,8 +182,9 @@
 		21617C092BEFE74400284729 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				21617C3A2BF2EE0000284729 /* Constants */,
+				21617C312BF2D81C00284729 /* Helper */,
 				21617C1E2BF2305C00284729 /* Components */,
-				21617C1B2BF19D1700284729 /* Common */,
 				21617C102BF0079600284729 /* Localizable */,
 				21617C0D2BF0063200284729 /* Localization */,
 				21617C0A2BEFE74D00284729 /* Extensions */,
@@ -172,8 +195,13 @@
 		21617C0A2BEFE74D00284729 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				21617C0B2BEFE7B000284729 /* UISearchBar.swift */,
-				21617C172BF0097500284729 /* LocalizationKey+Value.swift */,
+				21617C1C2BF19D2C00284729 /* UINavigationControllerExtension.swift */,
+				21617C0B2BEFE7B000284729 /* UISearchBarExtension.swift */,
+				21617C172BF0097500284729 /* LocalizationKeyExtension.swift */,
+				21617C2D2BF2D6F200284729 /* UIViewExtension.swift */,
+				21617C342BF2DB2E00284729 /* UIImageViewExtension.swift */,
+				21617C362BF2DD8300284729 /* IntExtension.swift */,
+				21617C382BF2DDFD00284729 /* UITableViewCellExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,20 +222,62 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
-		21617C1B2BF19D1700284729 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				21617C1C2BF19D2C00284729 /* CustomNavigationController.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		21617C1E2BF2305C00284729 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				21617C1F2BF2307200284729 /* SearchBar.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		21617C212BF2C92B00284729 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				21617C232BF2C95700284729 /* SearchViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		21617C222BF2C93600284729 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21617C052BEFC09C00284729 /* SearchViewController.swift */,
+				21617C072BEFC11100284729 /* SearchView.swift */,
+				21617C2F2BF2D76600284729 /* ProductTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		21617C252BF2C96B00284729 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				21617C282BF2CBE900284729 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		21617C2A2BF2CC6D00284729 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21617C2B2BF2CCC600284729 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		21617C312BF2D81C00284729 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				21617C322BF2D82E00284729 /* ViewCodeSetup.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		21617C3A2BF2EE0000284729 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				21617C262BF2C98900284729 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,14 +414,24 @@
 			files = (
 				21617C062BEFC09C00284729 /* SearchViewController.swift in Sources */,
 				21617BFE2BEFBF0800284729 /* MainCoordinator.swift in Sources */,
-				21617C182BF0097500284729 /* LocalizationKey+Value.swift in Sources */,
+				21617C2C2BF2CCC600284729 /* Product.swift in Sources */,
+				21617C352BF2DB2E00284729 /* UIImageViewExtension.swift in Sources */,
+				21617C332BF2D82E00284729 /* ViewCodeSetup.swift in Sources */,
+				21617C182BF0097500284729 /* LocalizationKeyExtension.swift in Sources */,
 				21617C0F2BF0065100284729 /* LocalizationKey.swift in Sources */,
+				21617C302BF2D76600284729 /* ProductTableViewCell.swift in Sources */,
 				21617C082BEFC11100284729 /* SearchView.swift in Sources */,
+				21617C2E2BF2D6F300284729 /* UIViewExtension.swift in Sources */,
 				21617C002BEFBF3C00284729 /* Coordinator.swift in Sources */,
-				21617C1D2BF19D2C00284729 /* CustomNavigationController.swift in Sources */,
-				21617C0C2BEFE7B000284729 /* UISearchBar.swift in Sources */,
+				21617C272BF2C98900284729 /* Constants.swift in Sources */,
+				21617C242BF2C95700284729 /* SearchViewModel.swift in Sources */,
+				21617C372BF2DD8300284729 /* IntExtension.swift in Sources */,
+				21617C1D2BF19D2C00284729 /* UINavigationControllerExtension.swift in Sources */,
+				21617C0C2BEFE7B000284729 /* UISearchBarExtension.swift in Sources */,
 				21617BCE2BEFBE3B00284729 /* AppDelegate.swift in Sources */,
 				21617C202BF2307200284729 /* SearchBar.swift in Sources */,
+				21617C392BF2DDFD00284729 /* UITableViewCellExtension.swift in Sources */,
+				21617C292BF2CBE900284729 /* Network.swift in Sources */,
 				21617BD02BEFBE3B00284729 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +629,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,7 +657,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
