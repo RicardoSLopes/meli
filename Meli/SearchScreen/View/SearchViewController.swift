@@ -29,7 +29,10 @@ class SearchViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = SearchView()
+        self.view = SearchView(
+            viewModel: viewModel,
+            navigation: coordinator?.navigationController
+        )
     }
     
     override func viewDidLoad() {
@@ -47,7 +50,6 @@ class SearchViewController: UIViewController {
         self.view.backgroundColor = .white
         navigationItem.titleView = searchView.searchBar
         navigationController?.setMeliAppearance()
-        searchView.viewModel = viewModel
     }
 }
 

@@ -11,11 +11,10 @@ extension UIView {
     
     func anchor(top: NSLayoutYAxisAnchor? = nil, paddingTop: CGFloat? = nil,
                 bottom: NSLayoutYAxisAnchor? = nil, paddingBottom: CGFloat? = nil,
-                left: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat? = nil,
-                right: NSLayoutXAxisAnchor? = nil, paddingRight: CGFloat? = nil, width: CGFloat? = nil,
-                height: CGFloat? = nil)
-        {
-        
+                leading: NSLayoutXAxisAnchor? = nil, paddingLeading: CGFloat? = nil,
+                trailing: NSLayoutXAxisAnchor? = nil, paddingTrailing: CGFloat? = nil,
+                width: CGFloat? = nil, height: CGFloat? = nil)
+    {
         translatesAutoresizingMaskIntoConstraints = false
         
         if let top = top {
@@ -26,12 +25,12 @@ extension UIView {
             bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom ?? 0).isActive = true
         }
         
-        if let left = left {
-            leftAnchor.constraint(equalTo: left, constant: paddingLeft ?? 0).isActive = true
+        if let leading = leading {
+            leadingAnchor.constraint(equalTo: leading, constant: paddingLeading ?? 0).isActive = true
         }
         
-        if let right = right {
-            rightAnchor.constraint(equalTo: right, constant: paddingRight ?? 0).isActive = true
+        if let trailing = trailing {
+            trailingAnchor.constraint(equalTo: trailing, constant: paddingTrailing ?? 0).isActive = true
         }
         
         if let width = width {

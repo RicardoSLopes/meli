@@ -1,5 +1,5 @@
 //
-//  IntExtension.swift
+//  DoubleExtension.swift
 //  Meli
 //
 //  Created by Ricardo Santana on 13/05/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Int {
+extension Double {
     func toCurrencyFormat() -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

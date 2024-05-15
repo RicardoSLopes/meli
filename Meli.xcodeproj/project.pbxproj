@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		21617BCE2BEFBE3B00284729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617BCD2BEFBE3B00284729 /* AppDelegate.swift */; };
 		21617BD02BEFBE3B00284729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617BCF2BEFBE3B00284729 /* SceneDelegate.swift */; };
-		21617BD52BEFBE3B00284729 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 21617BD42BEFBE3B00284729 /* Base */; };
 		21617BD72BEFBE3D00284729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21617BD62BEFBE3D00284729 /* Assets.xcassets */; };
-		21617BDA2BEFBE3D00284729 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 21617BD92BEFBE3D00284729 /* Base */; };
 		21617BE52BEFBE3E00284729 /* MeliTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617BE42BEFBE3E00284729 /* MeliTests.swift */; };
 		21617BEF2BEFBE3E00284729 /* MeliUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617BEE2BEFBE3E00284729 /* MeliUITests.swift */; };
 		21617BF12BEFBE3E00284729 /* MeliUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617BF02BEFBE3E00284729 /* MeliUITestsLaunchTests.swift */; };
@@ -33,8 +31,10 @@
 		21617C302BF2D76600284729 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C2F2BF2D76600284729 /* ProductTableViewCell.swift */; };
 		21617C332BF2D82E00284729 /* ViewCodeSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C322BF2D82E00284729 /* ViewCodeSetup.swift */; };
 		21617C352BF2DB2E00284729 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C342BF2DB2E00284729 /* UIImageViewExtension.swift */; };
-		21617C372BF2DD8300284729 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C362BF2DD8300284729 /* IntExtension.swift */; };
+		21617C372BF2DD8300284729 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C362BF2DD8300284729 /* DoubleExtension.swift */; };
 		21617C392BF2DDFD00284729 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C382BF2DDFD00284729 /* UITableViewCellExtension.swift */; };
+		21617C3E2BF432A900284729 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C3D2BF432A900284729 /* ProductDetailViewController.swift */; };
+		21617C402BF4353B00284729 /* ProductDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C3F2BF4353B00284729 /* ProductDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +58,7 @@
 		21617BCA2BEFBE3B00284729 /* Meli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21617BCD2BEFBE3B00284729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21617BCF2BEFBE3B00284729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		21617BD42BEFBE3B00284729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21617BD62BEFBE3D00284729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		21617BD92BEFBE3D00284729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21617BDB2BEFBE3D00284729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21617BE02BEFBE3E00284729 /* MeliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21617BE42BEFBE3E00284729 /* MeliTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeliTests.swift; sourceTree = "<group>"; };
@@ -85,8 +83,10 @@
 		21617C2F2BF2D76600284729 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		21617C322BF2D82E00284729 /* ViewCodeSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeSetup.swift; sourceTree = "<group>"; };
 		21617C342BF2DB2E00284729 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		21617C362BF2DD8300284729 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		21617C362BF2DD8300284729 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		21617C382BF2DDFD00284729 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
+		21617C3D2BF432A900284729 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		21617C3F2BF4353B00284729 /* ProductDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,11 +141,10 @@
 				21617C252BF2C96B00284729 /* Network */,
 				21617C092BEFE74400284729 /* Utils */,
 				21617C042BEFC07500284729 /* SearchScreen */,
+				21617C3B2BF4328600284729 /* Product Detail */,
 				21617BCD2BEFBE3B00284729 /* AppDelegate.swift */,
 				21617BCF2BEFBE3B00284729 /* SceneDelegate.swift */,
-				21617BD32BEFBE3B00284729 /* Main.storyboard */,
 				21617BD62BEFBE3D00284729 /* Assets.xcassets */,
-				21617BD82BEFBE3D00284729 /* LaunchScreen.storyboard */,
 				21617BDB2BEFBE3D00284729 /* Info.plist */,
 				21617BFD2BEFBF0800284729 /* MainCoordinator.swift */,
 				21617BFF2BEFBF3C00284729 /* Coordinator.swift */,
@@ -200,7 +199,7 @@
 				21617C172BF0097500284729 /* LocalizationKeyExtension.swift */,
 				21617C2D2BF2D6F200284729 /* UIViewExtension.swift */,
 				21617C342BF2DB2E00284729 /* UIImageViewExtension.swift */,
-				21617C362BF2DD8300284729 /* IntExtension.swift */,
+				21617C362BF2DD8300284729 /* DoubleExtension.swift */,
 				21617C382BF2DDFD00284729 /* UITableViewCellExtension.swift */,
 			);
 			path = Extensions;
@@ -278,6 +277,23 @@
 				21617C262BF2C98900284729 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		21617C3B2BF4328600284729 /* Product Detail */ = {
+			isa = PBXGroup;
+			children = (
+				21617C3C2BF4329200284729 /* View */,
+			);
+			path = "Product Detail";
+			sourceTree = "<group>";
+		};
+		21617C3C2BF4329200284729 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				21617C3D2BF432A900284729 /* ProductDetailViewController.swift */,
+				21617C3F2BF4353B00284729 /* ProductDetailTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,8 +402,6 @@
 			files = (
 				21617BD72BEFBE3D00284729 /* Assets.xcassets in Resources */,
 				21617C132BF007B800284729 /* Localizable.strings in Resources */,
-				21617BDA2BEFBE3D00284729 /* Base in Resources */,
-				21617BD52BEFBE3B00284729 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,19 +427,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				21617C062BEFC09C00284729 /* SearchViewController.swift in Sources */,
+				21617C402BF4353B00284729 /* ProductDetailTableViewCell.swift in Sources */,
 				21617BFE2BEFBF0800284729 /* MainCoordinator.swift in Sources */,
 				21617C2C2BF2CCC600284729 /* Product.swift in Sources */,
 				21617C352BF2DB2E00284729 /* UIImageViewExtension.swift in Sources */,
 				21617C332BF2D82E00284729 /* ViewCodeSetup.swift in Sources */,
 				21617C182BF0097500284729 /* LocalizationKeyExtension.swift in Sources */,
 				21617C0F2BF0065100284729 /* LocalizationKey.swift in Sources */,
+				21617C3E2BF432A900284729 /* ProductDetailViewController.swift in Sources */,
 				21617C302BF2D76600284729 /* ProductTableViewCell.swift in Sources */,
 				21617C082BEFC11100284729 /* SearchView.swift in Sources */,
 				21617C2E2BF2D6F300284729 /* UIViewExtension.swift in Sources */,
 				21617C002BEFBF3C00284729 /* Coordinator.swift in Sources */,
 				21617C272BF2C98900284729 /* Constants.swift in Sources */,
 				21617C242BF2C95700284729 /* SearchViewModel.swift in Sources */,
-				21617C372BF2DD8300284729 /* IntExtension.swift in Sources */,
+				21617C372BF2DD8300284729 /* DoubleExtension.swift in Sources */,
 				21617C1D2BF19D2C00284729 /* UINavigationControllerExtension.swift in Sources */,
 				21617C0C2BEFE7B000284729 /* UISearchBarExtension.swift in Sources */,
 				21617BCE2BEFBE3B00284729 /* AppDelegate.swift in Sources */,
@@ -469,22 +485,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		21617BD32BEFBE3B00284729 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				21617BD42BEFBE3B00284729 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		21617BD82BEFBE3D00284729 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				21617BD92BEFBE3D00284729 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		21617C112BF007B800284729 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -627,7 +627,6 @@
 				INFOPLIST_FILE = Meli/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -655,7 +654,6 @@
 				INFOPLIST_FILE = Meli/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

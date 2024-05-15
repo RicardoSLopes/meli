@@ -11,6 +11,6 @@ import Foundation
 struct Constants {
     
     //https://api.mercadolibre.com/sites/MLA/search?q=iphone 15
-    static let baseURL = "https://api.mercadolibre.com/sites/MLA/"
+    static let baseURL = "https://api.mercadolibre.com/sites/MLB/"
     static let searchEndpoint = "search"
 }

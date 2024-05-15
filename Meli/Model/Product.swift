@@ -7,10 +7,15 @@
 
 import Foundation
 
+struct ProductResult: Codable {
+    
+    let results: [Product]
+}
+
 struct Product: Codable {
     
     let id: String
     let title: String?
-    let price: Int?
+    let price: Double?
     let thumbnail: String?
 }

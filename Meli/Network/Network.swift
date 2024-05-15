@@ -48,9 +48,14 @@ class Network: NetworkRequest {
             throw APIError.serverError(statusCode.statusCode)
         }
         
-        let productData = try JSONDecoder().decode([Product].self, from: data)
         
-        return productData
+        do {
+            let productData = try JSONDecoder().decode(ProductResult.self, from: data)
+            return productData.results
+        } catch {
+            print("error \(error)")
+            return []
+        }
     }
     
 }

@@ -1,13 +1,12 @@
 //
-//  ProductTableViewCell.swift
+//  ProductDetailTableViewCell.swift
 //  Meli
 //
-//  Created by Ricardo Santana on 13/05/24.
+//  Created by Ricardo Santana on 14/05/24.
 //
-
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
+class ProductDetailTableViewCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -38,7 +37,7 @@ class ProductTableViewCell: UITableViewCell {
 
 }
 
-extension ProductTableViewCell: ViewCodeSetup {
+extension ProductDetailTableViewCell: ViewCodeSetup {
     
     func setViewHierarchy() {
         productThumb.translatesAutoresizingMaskIntoConstraints = false
