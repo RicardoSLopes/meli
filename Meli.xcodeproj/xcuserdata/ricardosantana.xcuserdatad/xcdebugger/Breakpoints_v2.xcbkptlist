@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C5DE8731-4CEC-47A0-A608-216E98BB3B06"
+            uuid = "5653911E-7A70-4ABF-9FC7-F68E43097223"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Meli/Utils/Common/CustomNavigationController.swift"
+            filePath = "Meli/MainCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "004D60F8-31D2-44F7-B100-3EC61A468D68"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Meli/SearchScreen/View/SearchView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "setObservers()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "showProductDetail(for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

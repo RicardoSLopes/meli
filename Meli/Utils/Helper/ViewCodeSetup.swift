@@ -8,14 +8,14 @@
 import Foundation
 
 protocol ViewCodeSetup {
-    func setViewHierarchy()
+    func setupHierarchy()
     func setupConstraints()
-    func setupViews()
+    func setupView()
 }
 extension ViewCodeSetup {
     
-    func setupViews() {
-        setViewHierarchy()
+    func setupView() {
+        setupHierarchy()
         setupConstraints()
     }
 }

@@ -9,46 +9,40 @@ import UIKit
 
 class ProductDetailViewController: UIViewController {
     
+    weak var coordinator: MainCoordinator?
     var product: Product?
     
-    let text: UILabel = {
-        let label = UILabel()
-        return label
-    }()
+    var productDetailView: ProductDetailView {
+        guard let unwrappedView = self.view as? ProductDetailView else {
+            fatalError("No View!")
+        }
+        return unwrappedView
+    }
     
-    private let producDetailTableView: UITableView = {
-        let tableView = UITableView()
-        
-        tableView.register(
-            ProductDetailTableViewCell.self,
-            forCellReuseIdentifier: ProductDetailTableViewCell.identifier
-        )
-        return tableView
-    }()
-
+    override func loadView() {
+        self.view = ProductDetailView()
+        productDetailView.product = product
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setupViews()
         viewSetup()
     }
     
     func viewSetup() {
         view.backgroundColor = .white
     }
-
-}
-
-extension ProductDetailViewController: ViewCodeSetup {
-    func setViewHierarchy() {
-        self.view.addSubview(text)
-        text.text = product?.title
-    }
-    
-    func setupConstraints() {
-        text.translatesAutoresizingMaskIntoConstraints = false
-        text.center(centerX: self.view.centerXAnchor, centerY: self.view.centerYAnchor)
-    }
-    
     
 }
+
+//extension ProductDetailViewController: ViewCodeSetup {
+//    func setViewHierarchy() {
+//        self.view.addSubview(text)
+//        text.text = product?.title
+//    }
+//    
+//    func setupConstraints() {
+//        text.translatesAutoresizingMaskIntoConstraints = false
+//        text.center(centerX: self.view.centerXAnchor, centerY: self.view.centerYAnchor)
+//    }
+//}

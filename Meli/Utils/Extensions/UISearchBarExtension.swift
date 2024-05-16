@@ -23,15 +23,16 @@ extension UISearchBar {
             textField.textColor = .black
             textField.font = UIFont.systemFont(ofSize: 14)
             textField.placeholder = LocalizationKey.searchBarPlaceholder.value()
-            
             textField.layer.cornerRadius = 18
             textField.layer.masksToBounds = true
+            textField.clearButtonMode = .never
         } else {
             if let textField = self.value(forKey: "searchField") as? UITextField {
                 textField.backgroundColor = .white
                 textField.textColor = .black
                 textField.font = UIFont.systemFont(ofSize: 14)
                 textField.placeholder = LocalizationKey.searchBarPlaceholder.value()
+                textField.clearButtonMode = .never
                 
                 if let backgroundView = textField.subviews.first {
                     backgroundView.layer.cornerRadius = 18

@@ -29,7 +29,7 @@ class ProductTableViewCell: UITableViewCell {
     }()
     
     func setViewWith(product: Product) {
-        setupViews()
+        setupView()
         
         self.priceLabel.text = product.price?.toCurrencyFormat()
         self.titleLabel.text = product.title
@@ -40,7 +40,7 @@ class ProductTableViewCell: UITableViewCell {
 
 extension ProductTableViewCell: ViewCodeSetup {
     
-    func setViewHierarchy() {
+    func setupHierarchy() {
         productThumb.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol SearchViewDelegate: AnyObject {
+    func showProductDetail(didSelectProduct product: Product)
+}
+
 class SearchView: UIView {
     
     var viewModel: SearchViewModel
     let navigation: UINavigationController?
+    let kHeightRow: CGFloat = 160
+    weak var delegate: SearchViewDelegate?
     
     init(viewModel: SearchViewModel,
          navigation: UINavigationController?) {
@@ -19,6 +25,10 @@ class SearchView: UIView {
         super.init(frame: .zero)
         self.backgroundColor = .white
         self.setupView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     private let productTableView: UITableView = {
@@ -36,12 +46,6 @@ class SearchView: UIView {
         searchBar.setBarStyle()
         return searchBar
     }()
-    
-    
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     private func setupView() {
         setObservers()
@@ -71,7 +75,7 @@ class SearchView: UIView {
             trailing: self.trailingAnchor
         )
     }
-    
+    // Mover para outra camada
     private func setObservers() {
         viewModel.$products.sink { [weak self] products in
             DispatchQueue.main.async {
@@ -94,24 +98,19 @@ extension SearchView: UITableViewDelegate, UITableViewDataSource {
         let product = viewModel.products[indexPath.row]
         
         cell.setViewWith(product: product)
+        cell.selectionStyle = .none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return kHeightRow
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO: adicionar coordinator
         let product = viewModel.products[indexPath.row]
-        
-        let productDetailVC = ProductDetailViewController()
-        productDetailVC.product = product
-        
-        self.navigation?.pushViewController(productDetailVC, animated: true)
+        delegate?.showProductDetail(didSelectProduct: product)
     }
-    
 }
 
 

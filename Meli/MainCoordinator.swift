@@ -21,4 +21,10 @@ class MainCoordinator: Coordinator {
         searchViewController.coordinator = self
         navigationController.pushViewController(searchViewController, animated: true)
     }
+    
+    func showProductDetail(for product: Product) {
+        let productDetailViewController = ProductDetailViewController()
+        productDetailViewController.product = product
+        navigationController.pushViewController(productDetailViewController, animated: true)
+    }
 }

@@ -33,25 +33,28 @@ class SearchViewController: UIViewController {
             viewModel: viewModel,
             navigation: coordinator?.navigationController
         )
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        searchSetup()
+        searchView.delegate = self
+        self.navigationItem.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = .black
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchSetup()
         self.navigationController?.navigationBar.isHidden = false
     }
     
     func searchSetup() {
-        self.view = searchView
         self.view.backgroundColor = .white
         navigationItem.titleView = searchView.searchBar
         navigationController?.setMeliAppearance()
     }
 }
 
+extension SearchViewController: SearchViewDelegate {
+    func showProductDetail(didSelectProduct product: Product) {
+        coordinator?.showProductDetail(for: product)
+    }
+}
 
 

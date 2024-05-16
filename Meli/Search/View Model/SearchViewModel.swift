@@ -23,12 +23,9 @@ class SearchViewModel {
         cancellable.forEach({ $0.cancel() })
     }
     
-    @MainActor func searchProducts(searchTerm: String) {
-        //@Main Actor atualiza as informaçoes na main thread
-        ///substitui o  DispatchQueue.main.async
+    func searchProducts(searchTerm: String) {
         Task {
             self.products = try await network.searchForData(searchTerm: searchTerm)
-           
         }
     }
 }
