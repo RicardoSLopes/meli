@@ -10,7 +10,8 @@ import UIKit
 class SearchViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
-    var viewModel: SearchViewModel
+    var searchViewModel: SearchViewModel
+    var productDetailViewModel: ProductDetailViewModel?
     
     var searchView: SearchView {
         guard let unwrappedView = self.view as? SearchView else {
@@ -20,7 +21,7 @@ class SearchViewController: UIViewController {
     }
     
     init(viewModel: SearchViewModel) {
-        self.viewModel = viewModel
+        self.searchViewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,7 +31,7 @@ class SearchViewController: UIViewController {
     
     override func loadView() {
         self.view = SearchView(
-            viewModel: viewModel,
+            viewModel: searchViewModel,
             navigation: coordinator?.navigationController
         )
         searchView.delegate = self
@@ -52,8 +53,28 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: SearchViewDelegate {
-    func showProductDetail(didSelectProduct product: Product) {
-        coordinator?.showProductDetail(for: product)
+        
+    func getProductDetails(from product: Product) {
+        guard let network = coordinator?.networkService else { return }
+        productDetailViewModel = ProductDetailViewModel(network: network)
+        productDetailViewModel?.getProductDetails(productID: product.id) { [weak self] details, error in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                if let details = details {
+                    self.showProductDetails(didSelectProduct: product, productDetails:  details.plainText)
+                } else if let error = error {
+                    self.showError(error)
+                }
+            }
+        }
+    }
+    
+    func showProductDetails(didSelectProduct product: Product, productDetails: String) {
+        coordinator?.showProductDetails(for: product, productDetails: productDetails)
+    }
+    
+    private func showError(_ error: Error) {
+        // !!! Handle error by showing alert or error message
     }
 }
 

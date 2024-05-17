@@ -9,3 +9,6 @@
 // MARK: Search Screen
 "searchBarPlaceholder" = "Buscar no Mercado Livre";
 "cancelSearch" = "Cancelar";
+
+// MARK: Product Details Screen
+"detailsTitle" = "Descrição";

@@ -11,6 +11,7 @@ class ProductDetailViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
     var product: Product?
+    var productDetails: String?
     
     var productDetailView: ProductDetailView {
         guard let unwrappedView = self.view as? ProductDetailView else {
@@ -22,6 +23,7 @@ class ProductDetailViewController: UIViewController {
     override func loadView() {
         self.view = ProductDetailView()
         productDetailView.product = product
+        productDetailView.productDetails = productDetails
     }
     
     override func viewDidLoad() {
@@ -32,17 +34,4 @@ class ProductDetailViewController: UIViewController {
     func viewSetup() {
         view.backgroundColor = .white
     }
-    
 }
-
-//extension ProductDetailViewController: ViewCodeSetup {
-//    func setViewHierarchy() {
-//        self.view.addSubview(text)
-//        text.text = product?.title
-//    }
-//    
-//    func setupConstraints() {
-//        text.translatesAutoresizingMaskIntoConstraints = false
-//        text.center(centerX: self.view.centerXAnchor, centerY: self.view.centerYAnchor)
-//    }
-//}

@@ -10,6 +10,7 @@ import UIKit
 class ProductDetailView: UIView, ViewCodeSetup {
     
     var product: Product?
+    var productDetails: String?
     
     init() {
         super.init(frame: .zero)
@@ -35,9 +36,6 @@ class ProductDetailView: UIView, ViewCodeSetup {
     private func setupTableView() {
         self.productDetailTableView.dataSource = self
         self.productDetailTableView.delegate = self
-        
-        productDetailTableView.rowHeight = UITableView.automaticDimension
-        productDetailTableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     func setupHierarchy() {
@@ -65,13 +63,10 @@ extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDetailTableViewCell.identifier, for: indexPath) as? ProductDetailTableViewCell else { return UITableViewCell() }
         
-        cell.setViewWith(product: product)
+        cell.setViewWith(product: product, productDetails: productDetails)
         cell.selectionStyle = .none
+        cell.textLabel?.numberOfLines = 0
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 450
     }
 }

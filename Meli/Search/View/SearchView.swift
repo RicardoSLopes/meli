@@ -8,7 +8,8 @@
 import UIKit
 
 protocol SearchViewDelegate: AnyObject {
-    func showProductDetail(didSelectProduct product: Product)
+//    func showProductDetail(didSelectProduct product: Product, productDetails: String)
+    func getProductDetails(from product: Product)
 }
 
 class SearchView: UIView {
@@ -109,7 +110,9 @@ extension SearchView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product = viewModel.products[indexPath.row]
-        delegate?.showProductDetail(didSelectProduct: product)
+        // !!! Tratar caso nao venha Product ID
+        let productDetails = delegate?.getProductDetails(from: product)
+//        delegate?.showProductDetail(didSelectProduct: product, productDetails: productDetails ?? "Sem descricao")
     }
 }
 

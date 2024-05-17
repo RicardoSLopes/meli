@@ -24,8 +24,19 @@ class SearchViewModel {
     }
     
     func searchProducts(searchTerm: String) {
+        let queryItem = [URLQueryItem(name: Constants.MLBaseURL.SearchItems.queryItemName, value: searchTerm)]
         Task {
-            self.products = try await network.searchForData(searchTerm: searchTerm)
+            do {
+                let productResult = try await network.fetchData(from: Constants.MLBaseURL.SearchItems.path, 
+                                                                queryItems: queryItem,
+                                                                decodeAs: ProductResult.self)
+                DispatchQueue.main.async {
+                    self.products = productResult.results
+                    print("Produtos carregados")
+                }
+            } catch {
+                print("Erro ao buscar produtos: \(error)")
+            }
         }
     }
 }

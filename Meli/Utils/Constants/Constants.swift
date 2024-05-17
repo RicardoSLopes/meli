@@ -7,29 +7,35 @@
 
 import Foundation
 
+//https://api.mercadolibre.com/sites/MLA/search?q=iphone 15
+//    static let baseURL = "https://api.mercadolibre.com/sites/MLB/"
+//    static let path = "/sites/MLB/"
+//    static let searchEndpoint = "search"
 
 struct Constants {
-    
-    //https://api.mercadolibre.com/sites/MLA/search?q=iphone 15
-    static let baseURL = "https://api.mercadolibre.com/sites/MLB/"
-    static let path = "/sites/MLB/"
-    static let searchEndpoint = "search"
-    
+    // MARK: structs
     struct MLBaseURL {
            static let baseURL = "https://api.mercadolibre.com"
-           
-           static func makeURL(path: String, queryItems: [URLQueryItem]) -> URL? {
-               var components = URLComponents(string: baseURL)
-               components?.path = path
-               components?.queryItems = queryItems
-               
-               return components?.url
-           }
         
         struct SearchItems {
             static let path = "/sites/MLB/search"
             static let queryItemName = "q"
         }
         
+        struct GetProductDetails {
+            static func path(forProductID productID: String) -> String {
+                            return "/items/\(productID)/description"
+                        }
+        }
+        
        }
+    
+    
+    // MARK: enums
+    enum HTTPMethod: String {
+        case get = "GET"
+        case post = "POST"
+        case put = "PUT"
+        case delete = "DELETE"
+    }
 }
