@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 class ProductDetailViewController: UIViewController {
     
@@ -21,17 +22,26 @@ class ProductDetailViewController: UIViewController {
     }
     
     override func loadView() {
+        super.loadView()
+        Logger.shared.log("Loading Product Detail View.", level: .info)
         self.view = ProductDetailView()
         productDetailView.product = product
         productDetailView.productDetails = productDetails
+        
+        if product == nil || productDetails == nil {
+            Logger.shared.log("Product or product details not set.", level: .error)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Logger.shared.log("ProductDetailViewController did load.", level: .info)
         viewSetup()
     }
     
     func viewSetup() {
         view.backgroundColor = .white
+        Logger.shared.log("ProductDetailView is setup with background color white.", level: .debug)
     }
 }
+

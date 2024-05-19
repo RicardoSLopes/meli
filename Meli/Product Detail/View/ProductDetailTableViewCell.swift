@@ -55,7 +55,14 @@ class ProductDetailTableViewCell: UITableViewCell {
         self.priceLabel.text = product?.price?.toCurrencyFormat()
         self.titleLabel.text = product?.title
         self.productThumb.loadImageFrom(url: product?.thumbnail ?? "")
-        self.productDetails.text = productDetails
+       
+        var detailText = productDetails
+        
+        if productDetails == "" {
+            detailText = "Opsss o vendedor não forneceu descrição deste produto"
+        }
+        self.productDetails.text = detailText
+        
     }
 }
 

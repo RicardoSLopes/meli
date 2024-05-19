@@ -12,3 +12,18 @@
 
 // MARK: Product Details Screen
 "detailsTitle" = "Descrição";
+
+
+// MARK: Error Screen
+"invalidURL" = "URL Inválida";
+"NoData" = "Sem informações disponíveis";
+"serverError" = "Erro no servidor";
+"unknownError" = "Erro desconhecido";
+"invalidURLMessage" = "Parece que digitamos algo errado! Confira sua conexão e dê outra chance para a gente, por favor!";
+"NoDataMessage"= "Nosso servidor está jogando duro e não quis enviar dados dessa vez. Vamos tentar de novo?";
+"serverErrorMessage" = "Nosso papo com o servidor está meio complicado hoje. Vamos tentar reestabelecer essa conversa?";
+"unknownErrorMessage" = "Opss... Algo misteriosamente errado aconteceu! Mas não se preocupe, já estamos no caso!";
+"invalidURLImage" = "invalid_url";
+"NoDataImage" = "no_data";
+"serverErrorImage" = "server_error";
+"unknownErrorImage" = "unknown_error";

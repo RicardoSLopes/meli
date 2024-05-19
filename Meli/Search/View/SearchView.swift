@@ -8,11 +8,10 @@
 import UIKit
 
 protocol SearchViewDelegate: AnyObject {
-//    func showProductDetail(didSelectProduct product: Product, productDetails: String)
     func getProductDetails(from product: Product)
 }
 
-class SearchView: UIView {
+class SearchView: UIView, ViewCodeSetup {
     
     var viewModel: SearchViewModel
     let navigation: UINavigationController?
@@ -48,7 +47,7 @@ class SearchView: UIView {
         return searchBar
     }()
     
-    private func setupView() {
+    func setupView() {
         setObservers()
         setupTableView()
         setupHierarchy()
@@ -60,13 +59,12 @@ class SearchView: UIView {
         self.productTableView.delegate = self
     }
     
-    private func setupHierarchy() {
+    func setupHierarchy() {
         self.searchBar.delegate = self
-        
         self.addSubview(productTableView)
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         productTableView.translatesAutoresizingMaskIntoConstraints = false
         
         productTableView.anchor(
@@ -111,8 +109,8 @@ extension SearchView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product = viewModel.products[indexPath.row]
         // !!! Tratar caso nao venha Product ID
-        let productDetails = delegate?.getProductDetails(from: product)
-//        delegate?.showProductDetail(didSelectProduct: product, productDetails: productDetails ?? "Sem descricao")
+//        let productDetails =
+        delegate?.getProductDetails(from: product)
     }
 }
 

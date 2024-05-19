@@ -1,5 +1,5 @@
 //
-//  UISearchBar.swift
+//  UISearchBarExtension.swift
 //  Meli
 //
 //  Created by Ricardo Santana on 11/05/24.

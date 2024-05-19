@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os.log
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,18 +14,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var coordinator: MainCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-            guard let winScene = (scene as? UIWindowScene) else { return }
-            window = UIWindow(windowScene: winScene)
-            
-            let navigation = UINavigationController()
-            
-            coordinator = MainCoordinator(navigationController: navigation)
-            
-            coordinator?.start()
-            
-            window?.rootViewController = navigation
-            window?.makeKeyAndVisible()
+        guard let winScene = (scene as? UIWindowScene) else {
+            Logger.shared.log("Failed to cast UIScene to UIWindowScene", level: .error)
+            return
         }
+        Logger.shared.log("Configuring UIWindowScene.", level: .info)
+        window = UIWindow(windowScene: winScene)
+        
+        let navigation = UINavigationController()
+        
+        Logger.shared.log("Starting MainCoordinator.", level: .info)
+        coordinator = MainCoordinator(navigationController: navigation)
+        
+        coordinator?.start()
+        
+        window?.rootViewController = navigation
+        window?.makeKeyAndVisible()
+        
+        Logger.shared.log("Window made key and visible.", level: .info)
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

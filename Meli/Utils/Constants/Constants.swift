@@ -30,12 +30,59 @@ struct Constants {
         
        }
     
-    
-    // MARK: enums
+    // MARK: HTTPMethod
     enum HTTPMethod: String {
         case get = "GET"
         case post = "POST"
         case put = "PUT"
         case delete = "DELETE"
     }
+    
+    // MARK: Error Screen
+    enum UIError {
+        case invalidURL
+        case noData
+        case serverError
+        case unknown
+
+        var title: String {
+            switch self {
+            case .invalidURL:
+                return LocalizationKey.invalidURL.value()
+            case .noData:
+                return LocalizationKey.NoData.value()
+            case .serverError:
+                return LocalizationKey.serverError.value()
+            case .unknown:
+                return LocalizationKey.unknownError.value()
+            }
+        }
+
+        var message: String {
+            switch self {
+            case .invalidURL:
+                return LocalizationKey.invalidURLMessage.value()
+            case .noData:
+                return LocalizationKey.NoDataMessage.value()
+            case .serverError:
+                return LocalizationKey.serverErrorMessage.value()
+            case .unknown:
+                return LocalizationKey.unknownErrorMessage.value()
+            }
+        }
+
+        var imageName: String {
+            switch self {
+            case .invalidURL:
+                return LocalizationKey.invalidURLImage.value()
+            case .noData:
+                return LocalizationKey.NoDataImage.value()
+            case .serverError:
+                return LocalizationKey.serverErrorImage.value()
+            case .unknown:
+                return LocalizationKey.unknownErrorImage.value()
+            }
+        }
+    }
+
 }
