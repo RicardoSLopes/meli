@@ -1,11 +1,6 @@
 # meli
 
 ### Desenvolver um app utilizando as APIs do Mercado Livre, onde permite que o usuário consulte os detalhes de um produto.
-
-O app deverá ter três telas:
-1. Campo de busca.
-2. Visualização dos resultados da busca.
-3. Detalhe do produto.
 ---
 Você pode entregar a lista e os detalhes dos produtos apenas em formato texto ou um mecanismo de pesquisa com imagens, ícones e texto, além de um detalhe completo do produto, como o mostrado na Web.
 Pré requisitos:
