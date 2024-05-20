@@ -38,7 +38,6 @@ class ProductTableViewCell: UITableViewCell {
         self.productThumb.loadImageFrom(url: product.thumbnail ?? "")
         self.priceLabel.text = product.price?.toCurrencyFormat()
     }
-
 }
 
 extension ProductTableViewCell: ViewCodeSetup {

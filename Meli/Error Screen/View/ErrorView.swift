@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ErrorViewDelegate: AnyObject {
-    func back()
+    func close()
 }
 
 class ErrorView: UIView {
@@ -51,7 +51,7 @@ class ErrorView: UIView {
     }
     
     @objc func closeButtonTapped() {
-        delegate?.back()
+        delegate?.close()
     }
 }
 

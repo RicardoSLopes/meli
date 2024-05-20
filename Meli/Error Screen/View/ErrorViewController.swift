@@ -56,7 +56,7 @@ class ErrorViewController: UIViewController {
 }
 
 extension ErrorViewController: ErrorViewDelegate {
-    func back() {
+    func close() {
         dismiss(animated: true)
         Logger.shared.log("ErrorViewController dismissed via back button.", level: .info)
     }

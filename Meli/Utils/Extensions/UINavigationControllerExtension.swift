@@ -11,10 +11,10 @@ extension UINavigationController {
     
     func setMeliAppearance() {
         let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.backgroundColor = .yellow
+        standardAppearance.backgroundColor = UIColor(named: "yellow")
 
         let scrollEdgeAppearance = UINavigationBarAppearance()
-        scrollEdgeAppearance.backgroundColor = .yellow
+        scrollEdgeAppearance.backgroundColor = UIColor(named: "yellow")
 
         self.navigationBar.standardAppearance = standardAppearance
 

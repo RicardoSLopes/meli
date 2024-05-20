@@ -36,15 +36,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         Logger.shared.log("SearchViewController view did load.", level: .info)
         
-        searchViewModel.showError = { [weak self] error in
-            Logger.shared.log("Error received: \(error)", level: .error)
-            self?.coordinator?.showError(error)
-        }
-        
-        productDetailViewModel?.showError = { [weak self] error in
-            Logger.shared.log("Error received: \(error)", level: .error)
-            self?.coordinator?.showError(error)
-        }
+        configureErrorHandling()
     }
     
     override func loadView() {
@@ -54,7 +46,6 @@ class SearchViewController: UIViewController {
         )
         searchView.delegate = self
         self.navigationItem.backButtonTitle = ""
-        self.navigationController?.navigationBar.tintColor = .black
         Logger.shared.log("SearchView set as main view in SearchViewController.", level: .info)
     }
     
@@ -62,6 +53,7 @@ class SearchViewController: UIViewController {
         super.viewWillAppear(animated)
         searchSetup()
         self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.hidesBackButton = true
         Logger.shared.log("SearchViewController will appear.", level: .info)
     }
     
@@ -70,6 +62,18 @@ class SearchViewController: UIViewController {
         navigationItem.titleView = searchView.searchBar
         navigationController?.setMeliAppearance()
         Logger.shared.log("Search setup completed.", level: .info)
+    }
+    
+    private func configureErrorHandling() {
+        searchViewModel.showError = { [weak self] error in
+            Logger.shared.log("Error received: \(error)", level: .error)
+            self?.coordinator?.showError(error)
+        }
+        
+        productDetailViewModel?.showError = { [weak self] error in
+            Logger.shared.log("Error received: \(error)", level: .error)
+            self?.coordinator?.showError(error)
+        }
     }
 }
 
@@ -103,6 +107,5 @@ extension SearchViewController: SearchViewDelegate {
     
     private func showError(_ error: Error) {
         Logger.shared.log("Error in SearchViewController: \(error.localizedDescription)", level: .error)
-        // Handle error by showing alert or error message
     }
 }

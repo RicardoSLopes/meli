@@ -8,7 +8,8 @@
 import UIKit
 
 protocol Coordinator {
-   var navigationController: UINavigationController { get set }
-   
-   func start()
+    var navigationController: UINavigationController { get set }
+    
+    func splashScreen()
+    func start()
 }

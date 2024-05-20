@@ -7,15 +7,10 @@
 
 import Foundation
 
-//https://api.mercadolibre.com/sites/MLA/search?q=iphone 15
-//    static let baseURL = "https://api.mercadolibre.com/sites/MLB/"
-//    static let path = "/sites/MLB/"
-//    static let searchEndpoint = "search"
-
 struct Constants {
     // MARK: structs
     struct MLBaseURL {
-           static let baseURL = "https://api.mercadolibre.com"
+        static let baseURL = "https://api.mercadolibre.com"
         
         struct SearchItems {
             static let path = "/sites/MLB/search"
@@ -24,11 +19,10 @@ struct Constants {
         
         struct GetProductDetails {
             static func path(forProductID productID: String) -> String {
-                            return "/items/\(productID)/description"
-                        }
+                return "/items/\(productID)/description"
+            }
         }
-        
-       }
+    }
     
     // MARK: HTTPMethod
     enum HTTPMethod: String {
@@ -44,7 +38,7 @@ struct Constants {
         case noData
         case serverError
         case unknown
-
+        
         var title: String {
             switch self {
             case .invalidURL:
@@ -57,7 +51,7 @@ struct Constants {
                 return LocalizationKey.unknownError.value()
             }
         }
-
+        
         var message: String {
             switch self {
             case .invalidURL:
@@ -70,7 +64,7 @@ struct Constants {
                 return LocalizationKey.unknownErrorMessage.value()
             }
         }
-
+        
         var imageName: String {
             switch self {
             case .invalidURL:
@@ -84,5 +78,4 @@ struct Constants {
             }
         }
     }
-
 }

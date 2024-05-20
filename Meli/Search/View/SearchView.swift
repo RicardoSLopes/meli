@@ -74,7 +74,7 @@ class SearchView: UIView, ViewCodeSetup {
             trailing: self.trailingAnchor
         )
     }
-    // Mover para outra camada
+
     private func setObservers() {
         viewModel.$products.sink { [weak self] products in
             DispatchQueue.main.async {
@@ -108,8 +108,6 @@ extension SearchView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product = viewModel.products[indexPath.row]
-        // !!! Tratar caso nao venha Product ID
-//        let productDetails =
         delegate?.getProductDetails(from: product)
     }
 }

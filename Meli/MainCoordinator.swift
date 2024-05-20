@@ -18,6 +18,12 @@ class MainCoordinator: Coordinator {
         Logger.shared.log("MainCoordinator initialized with a navigation controller.", level: .debug)
     }
     
+    func splashScreen() {
+        let splashViewController = SplashViewController()
+        splashViewController.coordinator = self
+        navigationController.pushViewController(splashViewController, animated: true)
+    }
+    
     func start() {
         Logger.shared.log("Starting MainCoordinator.", level: .info)
         let viewModel = SearchViewModel(network: networkService)
@@ -29,12 +35,12 @@ class MainCoordinator: Coordinator {
     
     func showProductDetails(for product: Product, productDetails: String) {
         Logger.shared.log("Preparing to show product details for product ID: \(product.id)", level: .info)
-        let productDetailViewController = ProductDetailViewController()
-        productDetailViewController.coordinator = self
-        productDetailViewController.product = product
-        productDetailViewController.productDetails = productDetails
-        navigationController.pushViewController(productDetailViewController, animated: true)
-        Logger.shared.log("ProductDetailViewController pushed onto navigation stack.", level: .info)
+        let productDetailsViewController = ProductDetailsViewController()
+        productDetailsViewController.coordinator = self
+        productDetailsViewController.product = product
+        productDetailsViewController.productDetails = productDetails
+        navigationController.pushViewController(productDetailsViewController, animated: true)
+        Logger.shared.log("ProductDetailsViewController pushed onto navigation stack.", level: .info)
     }
     
     func showError(_ error: Constants.UIError) {

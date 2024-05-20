@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Logger.shared.log("Starting MainCoordinator.", level: .info)
         coordinator = MainCoordinator(navigationController: navigation)
         
-        coordinator?.start()
+        coordinator?.splashScreen()
         
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
