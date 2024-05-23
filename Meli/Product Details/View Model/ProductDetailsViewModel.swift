@@ -10,45 +10,43 @@ import Combine
 import os.log
 
 protocol ProductDetailsViewModelProtocol {
-    var detailsProduct: DetailsProduct? { get }
+    var product: Product { get }
+    var productDetails: String? { get }
     var showError: ((Constants.UIError) -> Void)? { get set }
     
-    func getProductDetails(productID: String, completion: @escaping (DetailsProduct?, Error?) -> Void)
+    func loadProductDetails(productID: String, completion: @escaping (String) -> Void)
 }
 
 class ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     
-    @Published var detailsProduct: DetailsProduct?
+    //    @Published var detailsProduct: DetailsProduct?
+    var product: Product
+    @Published var productDetails: String?
     
     var cancellable: Set<AnyCancellable> = []
     var showError: ((Constants.UIError) -> Void)?
     let network: NetworkRequest
     
-    init(network: NetworkRequest) {
+    init(product: Product, network: NetworkRequest) {
+        self.product = product
         self.network = network
-        Logger.shared.log("ProductDetailsViewModel initialized with network service.", level: .info)
+        Logger.shared.log("ProductDetailsViewModel initialized with product and network service.", level: .info)
     }
     
-    deinit {
-        cancellable.forEach({ $0.cancel() })
-        Logger.shared.log("ProductDetailsViewModel deallocated.", level: .info)
-    }
-    
-    func getProductDetails(productID: String, completion: @escaping (DetailsProduct?, Error?) -> Void) {
+    func loadProductDetails(productID: String, completion: @escaping (String) -> Void) {
         Logger.shared.log("Attempting to fetch product details for product ID: \(productID)", level: .info)
-        Task {
+        Task { // @MainActor in
             do {
-                let detailsProductResult = try await network.fetchData(from: Constants.MLBaseURL.GetProductDetails.path(forProductID: productID), decodeAs: DetailsProduct.self)
+                let productDetailsResult = try await self.network.fetchData(from: Constants.MLBaseURL.GetProductDetails.path(forProductID: productID), decodeAs: ProductDetails.self)
                 DispatchQueue.main.async {
-                    self.detailsProduct = detailsProductResult
-                    completion(detailsProductResult, nil)
+                    //                    self.productDetails = detailsReturn
+                    completion(productDetailsResult.plainText)
                     Logger.shared.log("Product details successfully loaded for product ID: \(productID)", level: .info)
                 }
-            } catch {
-                Logger.shared.log("Error fetching product details: \(error.localizedDescription)", level: .error)
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
+                
+            } catch let error as APIError {
+                completion(ProductDetails().plainText)
+                showError?(error.toUIError())
             }
         }
     }

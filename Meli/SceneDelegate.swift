@@ -18,6 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             Logger.shared.log("Failed to cast UIScene to UIWindowScene", level: .error)
             return
         }
+        
+        UINavigationBar.appearance().tintColor = .black
+        
         Logger.shared.log("Configuring UIWindowScene.", level: .info)
         window = UIWindow(windowScene: winScene)
         

@@ -12,7 +12,7 @@
 
 // MARK: Product Details Screen
 "detailsTitle" = "Descrição";
-
+"noProductDetails" = "Opsss o vendedor não forneceu descrição deste produto";
 
 // MARK: Error Screen
 "invalidURL" = "URL Inválida";

@@ -9,7 +9,6 @@ import UIKit
 import os.log
 
 class MainCoordinator: Coordinator {
-    var childCoordinators: [Coordinator] = [Coordinator]()
     var navigationController = UINavigationController()
     let networkService: NetworkRequest = Network()
     
@@ -21,26 +20,37 @@ class MainCoordinator: Coordinator {
     func splashScreen() {
         let splashViewController = SplashViewController()
         splashViewController.coordinator = self
-        navigationController.pushViewController(splashViewController, animated: true)
+        navigationController.pushViewController(splashViewController, animated: false)
     }
     
     func start() {
         Logger.shared.log("Starting MainCoordinator.", level: .info)
-        let viewModel = SearchViewModel(network: networkService)
-        let searchViewController = SearchViewController(viewModel: viewModel)
+        let searchViewModel = SearchViewModel(network: networkService)
+        let searchViewController = SearchViewController(viewModel: searchViewModel)
         searchViewController.coordinator = self
         navigationController.pushViewController(searchViewController, animated: true)
         Logger.shared.log("SearchViewController pushed onto navigation stack.", level: .info)
     }
     
-    func showProductDetails(for product: Product, productDetails: String) {
+    func showProductDetails(for product: Product) {
         Logger.shared.log("Preparing to show product details for product ID: \(product.id)", level: .info)
-        let productDetailsViewController = ProductDetailsViewController()
+        let productDetaislViewModel = ProductDetailsViewModel(product: product, network: networkService)
+        let productDetailsViewController = ProductDetailsViewController(viewModel: productDetaislViewModel)
         productDetailsViewController.coordinator = self
-        productDetailsViewController.product = product
-        productDetailsViewController.productDetails = productDetails
+//        productDetailsViewController.product = product
+//        productDetailsViewController.productDetails = productDetails
         navigationController.pushViewController(productDetailsViewController, animated: true)
         Logger.shared.log("ProductDetailsViewController pushed onto navigation stack.", level: .info)
+    }
+    
+    func back(with searchTerm: String) {
+        self.navigationController.popViewController(animated: true)
+        
+        if let searchViewController = self.navigationController.viewControllers.last as? SearchViewController {
+            searchViewController.searchView.searchBar.text = searchTerm
+            searchViewController.searchView.searchBar.placeholder = searchTerm
+            searchViewController.searchBarSearchButtonClicked(searchViewController.searchView.searchBar)
+        }
     }
     
     func showError(_ error: Constants.UIError) {

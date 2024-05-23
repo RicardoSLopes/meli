@@ -15,6 +15,7 @@ public enum LocalizationKey: String {
     
     // MARK: Product Details Screen
     case detailsTitle
+    case noProductDetails
     
     // MARK: Error Screen
     case invalidURL

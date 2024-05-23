@@ -50,18 +50,12 @@ class ProductDetailTableViewCell: UITableViewCell {
         return label
     }()
     
-    func setViewWith(product: Product?, productDetails: String?) {
+    func setViewWith(product: Product?, productDetails: String) {
         setupView()
         self.priceLabel.text = product?.price?.toCurrencyFormat()
         self.titleLabel.text = product?.title
         self.productThumb.loadImageFrom(url: product?.thumbnail ?? "")
-       
-        var detailText = productDetails
-        
-        if productDetails == "" {
-            detailText = "Opsss o vendedor não forneceu descrição deste produto"
-        }
-        self.productDetails.text = detailText
+        self.productDetails.text = productDetails
     }
 }
 

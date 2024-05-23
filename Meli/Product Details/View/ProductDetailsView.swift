@@ -7,23 +7,30 @@
 
 import UIKit
 
-class ProductDetailView: UIView, ViewCodeSetup {
+class ProductDetailView: UIView {
     
-    var product: Product?
-    var productDetails: String?
+    var product: Product
+    var productDetails: String
     
-    init() {
+    init(product: Product, productDetails: String) {
+        self.product = product
+        self.productDetails = productDetails
         super.init(frame: .zero)
         self.backgroundColor = .white
-        self.setupView()
-        setupTableView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var productDetailTableView: UITableView = {
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.setBarStyle()
+        return searchBar
+    }()
+    
+    var productDetailTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(
             ProductDetailTableViewCell.self,
@@ -33,11 +40,13 @@ class ProductDetailView: UIView, ViewCodeSetup {
         return tableView
     }()
     
-    private func setupTableView() {
-        self.productDetailTableView.dataSource = self
-        self.productDetailTableView.delegate = self
+    func update(with productDetails: String) {
+        self.productDetails = productDetails
+        self.productDetailTableView.reloadData()
     }
-    
+}
+
+extension ProductDetailView:  ViewCodeSetup {
     func setupHierarchy() {
         addSubview(productDetailTableView)
     }
@@ -51,22 +60,5 @@ class ProductDetailView: UIView, ViewCodeSetup {
             leading: self.leadingAnchor,
             trailing: self.trailingAnchor
         )
-    }
-}
-
-extension ProductDetailView: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProductDetailTableViewCell.identifier, for: indexPath) as? ProductDetailTableViewCell else { return UITableViewCell() }
-        
-        cell.setViewWith(product: product, productDetails: productDetails)
-        cell.selectionStyle = .none
-        cell.textLabel?.numberOfLines = 0
-        
-        return cell
     }
 }

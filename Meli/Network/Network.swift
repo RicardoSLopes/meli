@@ -15,6 +15,7 @@ enum APIError: Error {
     case noData
     case decodingError
     case serverError(Int)
+    case unknown
 }
 
 protocol NetworkRequest {
@@ -60,6 +61,25 @@ class Network: NetworkRequest {
         } catch {
             Logger.shared.log("Decoding error for URL: \(url): \(error.localizedDescription)", level: .error)
             throw APIError.decodingError
+        }
+    }
+}
+
+extension APIError {
+    func toUIError() -> Constants.UIError {
+        switch self {
+        case .invalidURL, .invalidResponse:
+            return .invalidURL
+        case .noData:
+            return .noData
+        case .serverError(let statusCode):
+            if statusCode == 404 {
+                return .noData
+            } else {
+                return .serverError
+            }
+        case .decodingError, .requestFailed, .unknown:
+            return .unknown
         }
     }
 }
