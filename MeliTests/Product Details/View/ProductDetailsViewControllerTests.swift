@@ -11,13 +11,12 @@ import XCTest
 class ProductDetailsViewControllerTests: XCTestCase {
 
     var sut: ProductDetailsViewController!
+    var mockViewModel: MockProductDetailsViewModel!
 
     override func setUp() {
         super.setUp()
-      
-        sut = ProductDetailsViewController()
-        sut.product = Product(id: "1", title: "Test Product", price: 100.0, thumbnail: "test_url")
-        sut.productDetails = "Detailed information about the product."
+        mockViewModel = MockProductDetailsViewModel(product: MockProduct.product1)
+        sut = ProductDetailsViewController(viewModel: mockViewModel)
     }
 
     override func tearDown() {
@@ -25,11 +24,10 @@ class ProductDetailsViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testViewController_loadView_SetsProductDetails() {
-        sut.loadViewIfNeeded()
+    func testViewController_whenViewDidLoad_shouldCallLoadProductDetails() {
+        sut.viewDidLoad()
         
-        XCTAssertEqual(sut.productDetailView.product, sut.product)
-        XCTAssertEqual(sut.productDetailView.productDetails, sut.productDetails)
+        XCTAssertTrue(mockViewModel.loadProductDetailsWasCalled)
     }
 
     func testViewController_viewDidLoad_SetsBackgroundColor() {

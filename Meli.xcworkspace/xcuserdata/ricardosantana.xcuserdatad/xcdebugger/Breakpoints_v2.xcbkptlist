@@ -34,64 +34,6 @@
             endingLineNumber = "33"
             landmarkName = "searchProducts(searchTerm:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B9117E40-D02B-4F85-9A45-9F847B6C9BD4 - 701ac8d91e9c3094"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Meli.SearchViewModel.searchProducts(searchTerm: Swift.String) -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Meli/Search/View%20Model/SearchViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34">
-               </Location>
-               <Location
-                  uuid = "B9117E40-D02B-4F85-9A45-9F847B6C9BD4 - b814c98452914083"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in Meli.SearchViewModel.searchProducts(searchTerm: Swift.String) -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Meli/Search/View%20Model/SearchViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34">
-               </Location>
-               <Location
-                  uuid = "B9117E40-D02B-4F85-9A45-9F847B6C9BD4 - 59cd2d9b48ef7c92"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Meli.SearchViewModel.searchProducts(searchTerm: Swift.String) -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Meli/Search/View%20Model/SearchViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34">
-               </Location>
-               <Location
-                  uuid = "B9117E40-D02B-4F85-9A45-9F847B6C9BD4 - 55587ffaafd6da91"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Meli.SearchViewModel.searchProducts(searchTerm: Swift.String) -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Meli/Search/View%20Model/SearchViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -200,8 +142,8 @@
             filePath = "Meli/Product Details/View/ProductDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "loadProductDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -216,40 +158,10 @@
             filePath = "Meli/Product Details/View/ProductDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "loadProductDetails()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "79E34967-29DC-439C-A9E4-5B6ED60013CD - 13cc015bc08a9901"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Meli.ProductDetailsViewController.loadProductDetails() -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Meli/Product%20Details/View/ProductDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81">
-               </Location>
-               <Location
-                  uuid = "79E34967-29DC-439C-A9E4-5B6ED60013CD - 4573ea8b3e4046fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.String) -&gt; () in Meli.ProductDetailsViewController.loadProductDetails() -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Meli/Product%20Details/View/ProductDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -262,8 +174,8 @@
             filePath = "Meli/Product Details/View/ProductDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,36 +226,22 @@
             endingLineNumber = "21"
             landmarkName = "requestPermission(completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "53C56799-827B-44E5-8442-872F9FD689FE - 41b8ff87b44413e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Meli.DefaultDataConcentTransparencyHandler.requestPermission(completion: (Meli.UserPermissionStatus) -&gt; ()) -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Infrastructure/UserPermissions/PermissionsManager/DefaultDataConcentTransparencyHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21">
-               </Location>
-               <Location
-                  uuid = "53C56799-827B-44E5-8442-872F9FD689FE - 53caecceb1f0b536"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.ATTrackingManagerAuthorizationStatus) -&gt; () in Meli.DefaultDataConcentTransparencyHandler.requestPermission(completion: (Meli.UserPermissionStatus) -&gt; ()) -&gt; ()"
-                  moduleName = "Meli"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricardosantana/Development/iOS/Meli/Infrastructure/UserPermissions/PermissionsManager/DefaultDataConcentTransparencyHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3F019C3-FDC4-487E-B527-D1D80F3719D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeliTests/Product Details/View/ProductDetailsViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testViewController_whenViewDidLoad_shouldCallLoadProductDetails()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

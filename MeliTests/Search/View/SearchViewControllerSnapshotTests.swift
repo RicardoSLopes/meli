@@ -27,14 +27,14 @@ class SearchViewControllerSnapshotTests: XCTestCase {
     
     func testSearchViewController_WithData() {
         let sut = makeSUT()
-        sut.searchViewModel.products = [Product(id: "1", title: "Test Product", price: 10.0, thumbnail: "URL")]
+        sut.viewModel.products = [Product(id: "1", title: "Test Product", price: 10.0, thumbnail: "URL")]
         sut.view.layoutIfNeeded()
         assertSnapshot(matching: sut, as: .image(on: .iPhone8))
     }
     
     func testSearchViewController_WithError() {
         let sut = makeSUT()
-        sut.searchViewModel.showError?(.invalidURL)
+        sut.viewModel.showError?(.invalidURL)
         sut.view.layoutIfNeeded()
         assertSnapshot(matching: sut, as: .image(on: .iPhone8))
     }

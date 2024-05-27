@@ -14,8 +14,6 @@ class ProductDetailsViewController: UIViewController, UISearchBarDelegate {
     weak var coordinator: MainCoordinator?
     private var viewModel: ProductDetailsViewModel
     private var cancellable = Set<AnyCancellable>()
-    //    let product: Product
-    //    var productDetails: String?
     
     var productDetailView: ProductDetailView {
         guard let unwrappedView = self.view as? ProductDetailView else {
@@ -46,11 +44,6 @@ class ProductDetailsViewController: UIViewController, UISearchBarDelegate {
         super.loadView()
         Logger.shared.log("Loading Product Detail View.", level: .info)
         self.view = ProductDetailView(product: viewModel.product, productDetails: viewModel.productDetails ?? LocalizationKey.noProductDetails.value())
-        //        productDetailView.product = product
-        //
-        //        if product == nil || productDetails == nil {
-        //            Logger.shared.log("Product or product details not set.", level: .error)
-        //        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,14 +62,13 @@ class ProductDetailsViewController: UIViewController, UISearchBarDelegate {
     }
     
     private func loadProductDetails() {
-        print("init loadProductDetails\(cancellable.count)")
         viewModel.$productDetails
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] productDetail in
                 guard let self = self else { return }
             })
             .store(in: &cancellable)
-        print("end loadProductDetails\(cancellable.count)")
+        Logger.shared.log("Product Details loaded.", level: .info)
         
         viewModel.loadProductDetails(productID: viewModel.product.id) { [weak self] productDetails in
             guard let self else { return }

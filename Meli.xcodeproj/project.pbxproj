@@ -58,9 +58,12 @@
 		21617C842C02761900284729 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21617C832C02761800284729 /* Entitlements.plist */; };
 		21617C862C0291B300284729 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21617C852C0291B200284729 /* AppTrackingTransparency.framework */; };
 		21617C8B2C029B7300284729 /* DefaultDataConcentTransparencyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C8A2C029B7300284729 /* DefaultDataConcentTransparencyHandler.swift */; };
+		21617C8D2C04134F00284729 /* MockProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C8C2C04134F00284729 /* MockProductDetailsViewModel.swift */; };
+		21617C8F2C0415CA00284729 /* MockProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21617C8E2C0415CA00284729 /* MockProduct.swift */; };
+		21617C942C0424DC00284729 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21617C932C0424DC00284729 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6F0F6B6632C49546162E5812 /* Pods_Meli_MeliUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B7D8655C9CDF7868C886FF /* Pods_Meli_MeliUITests.framework */; };
 		87503884BCE63DB51460B055 /* Pods_Meli.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2796EBE142B1AA37E07EF4B4 /* Pods_Meli.framework */; };
-		F40F2D0EA6B11DF5AE09474B /* Pods_MeliTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA20BE48FB26EB360B164D3 /* Pods_MeliTests.framework */; };
+		F40F2D0EA6B11DF5AE09474B /* Pods_MeliTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA20BE48FB26EB360B164D3 /* Pods_MeliTests.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +141,10 @@
 		21617C832C02761800284729 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		21617C852C0291B200284729 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		21617C8A2C029B7300284729 /* DefaultDataConcentTransparencyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataConcentTransparencyHandler.swift; sourceTree = "<group>"; };
+		21617C8C2C04134F00284729 /* MockProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		21617C8E2C0415CA00284729 /* MockProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProduct.swift; sourceTree = "<group>"; };
+		21617C912C04249F00284729 /* SnapshotTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21617C932C0424DC00284729 /* SnapshotTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2796EBE142B1AA37E07EF4B4 /* Pods_Meli.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meli.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA20BE48FB26EB360B164D3 /* Pods_MeliTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeliTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA86F5A7295BE10C84326D87 /* Pods-Meli-MeliUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meli-MeliUITests.release.xcconfig"; path = "Target Support Files/Pods-Meli-MeliUITests/Pods-Meli-MeliUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21617C942C0424DC00284729 /* SnapshotTesting.framework in Frameworks */,
 				F40F2D0EA6B11DF5AE09474B /* Pods_MeliTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +452,8 @@
 				21617C6D2BFA945F00284729 /* MockSearchViewModel.swift */,
 				21617C712BFA9F2400284729 /* MockCoordinator.swift */,
 				21617C732BFAA91F00284729 /* MockNetwork.swift */,
+				21617C8C2C04134F00284729 /* MockProductDetailsViewModel.swift */,
+				21617C8E2C0415CA00284729 /* MockProduct.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -566,6 +576,8 @@
 		41F427119558AB5571CBDC5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21617C932C0424DC00284729 /* SnapshotTesting.framework */,
+				21617C912C04249F00284729 /* SnapshotTesting.framework */,
 				21617C852C0291B200284729 /* AppTrackingTransparency.framework */,
 				2796EBE142B1AA37E07EF4B4 /* Pods_Meli.framework */,
 				F2B7D8655C9CDF7868C886FF /* Pods_Meli_MeliUITests.framework */,
@@ -840,6 +852,7 @@
 				21617BE52BEFBE3E00284729 /* MeliTests.swift in Sources */,
 				21617C682BFA8A7800284729 /* MockErrorViewDelegate.swift in Sources */,
 				21617C7A2BFAB7A100284729 /* ErrorViewControllerSnapshotTests.swift in Sources */,
+				21617C8D2C04134F00284729 /* MockProductDetailsViewModel.swift in Sources */,
 				21617C722BFA9F2400284729 /* MockCoordinator.swift in Sources */,
 				21617C7C2BFABF1200284729 /* SearchViewControllerSnapshotTests.swift in Sources */,
 				21617C782BFAAFE200284729 /* ProductDetailsViewControllerTests.swift in Sources */,
@@ -847,6 +860,7 @@
 				21617C742BFAA91F00284729 /* MockNetwork.swift in Sources */,
 				21617C6C2BFA8FB300284729 /* SearchViewControllerTests.swift in Sources */,
 				21617C602BFA76BE00284729 /* ErrorViewControllerTests.swift in Sources */,
+				21617C8F2C0415CA00284729 /* MockProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

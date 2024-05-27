@@ -16,7 +16,7 @@ class SearchViewControllerTests: XCTestCase {
         let mockSearchViewModel = MockSearchViewModel(network: mockNetwork)
         let sut = makeSUT(coordinator: mockCoordinator, viewModel: mockSearchViewModel)
         
-        XCTAssertNotNil(sut.searchViewModel)
+        XCTAssertNotNil(sut.viewModel)
     }
     
     func testViewDidLoad_ShouldConfigureErrorHandling() {
@@ -27,7 +27,7 @@ class SearchViewControllerTests: XCTestCase {
 
         sut.viewDidLoad()
 
-        XCTAssertTrue(sut.searchViewModel.showError != nil)
+        XCTAssertTrue(sut.viewModel.showError != nil)
     }
     
     func testLoadView_ShouldSetupSearchView() {
