@@ -9,6 +9,12 @@ import UIKit
 
 class ProductDetailTableViewCell: UITableViewCell {
     
+    lazy var spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
     let backgroundContainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +60,11 @@ class ProductDetailTableViewCell: UITableViewCell {
         setupView()
         self.priceLabel.text = product?.price?.toCurrencyFormat()
         self.titleLabel.text = product?.title
-        self.productThumb.loadImageFrom(url: product?.thumbnail ?? "")
+        self.spinner.startAnimating()
+        self.productThumb.image = nil
+        self.productThumb.loadImageFrom(url: product?.thumbnail ?? "", completion: {
+            self.spinner.stopAnimating()
+        })
         self.productDetails.text = productDetails
     }
 }

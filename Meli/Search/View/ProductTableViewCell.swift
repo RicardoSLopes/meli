@@ -9,14 +9,20 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
     
-    let productThumb: UIImageView = {
+    lazy var spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
+    
+    lazy var productThumb: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
-    let titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
         label.lineBreakMode = .byTruncatingTail
@@ -25,7 +31,7 @@ class ProductTableViewCell: UITableViewCell {
         return label
     }()
     
-    let priceLabel: UILabel = {
+    lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -35,7 +41,11 @@ class ProductTableViewCell: UITableViewCell {
         setupView()
         
         self.titleLabel.text = product.title
-        self.productThumb.loadImageFrom(url: product.thumbnail ?? "")
+        self.spinner.startAnimating()
+        self.productThumb.image = nil
+        self.productThumb.loadImageFrom(url: product.thumbnail ?? "", completion: {
+            self.spinner.stopAnimating()
+        })
         self.priceLabel.text = product.price?.toCurrencyFormat()
     }
 }
@@ -43,7 +53,7 @@ class ProductTableViewCell: UITableViewCell {
 extension ProductTableViewCell: ViewCodeSetup {
     
     func setupHierarchy() {
-
+        self.contentView.addSubview(spinner)
         self.contentView.addSubview(productThumb)
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(priceLabel)
@@ -51,6 +61,12 @@ extension ProductTableViewCell: ViewCodeSetup {
     }
     
     func setupConstraints() {
+        
+        spinner.center(
+            centerX: productThumb.centerXAnchor,
+            centerY: productThumb.centerYAnchor
+            )
+        
         productThumb.anchor(
             top: self.topAnchor, paddingTop: 10,
             bottom: self.bottomAnchor, paddingBottom: 10,

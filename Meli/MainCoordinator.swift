@@ -28,7 +28,7 @@ class MainCoordinator: Coordinator {
         let searchViewModel = SearchViewModel(network: networkService)
         let searchViewController = SearchViewController(viewModel: searchViewModel)
         searchViewController.coordinator = self
-        navigationController.pushViewController(searchViewController, animated: true)
+        navigationController.pushViewController(searchViewController, animated: false)
         Logger.shared.log("SearchViewController pushed onto navigation stack.", level: .info)
     }
     
@@ -37,20 +37,14 @@ class MainCoordinator: Coordinator {
         let productDetaislViewModel = ProductDetailsViewModel(product: product, network: networkService)
         let productDetailsViewController = ProductDetailsViewController(viewModel: productDetaislViewModel)
         productDetailsViewController.coordinator = self
-//        productDetailsViewController.product = product
-//        productDetailsViewController.productDetails = productDetails
         navigationController.pushViewController(productDetailsViewController, animated: true)
         Logger.shared.log("ProductDetailsViewController pushed onto navigation stack.", level: .info)
     }
     
     func back(with searchTerm: String) {
+        Logger.shared.log("Presenting previous view", level: .error)
         self.navigationController.popViewController(animated: true)
-        
-        if let searchViewController = self.navigationController.viewControllers.last as? SearchViewController {
-            searchViewController.searchView.searchBar.text = searchTerm
-            searchViewController.searchView.searchBar.placeholder = searchTerm
-            searchViewController.searchBarSearchButtonClicked(searchViewController.searchView.searchBar)
-        }
+        configureSearchBar(searchTerm: searchTerm)
     }
     
     func showError(_ error: Constants.UIError) {
@@ -61,6 +55,19 @@ class MainCoordinator: Coordinator {
             errorViewController.modalTransitionStyle = .crossDissolve
             self.navigationController.present(errorViewController, animated: true, completion: nil)
             Logger.shared.log("ErrorViewController presented modally.", level: .info)
+        }
+    }
+}
+
+extension MainCoordinator {
+    private func configureSearchBar(searchTerm: String) {
+        Logger.shared.log("Configuring searchBar when back to the SeachBar Screen", level: .error)
+        if let viewController = self.navigationController.viewControllers.last as? SearchViewController {
+            viewController.viewModel.products.removeAll()
+            viewController.searchView.productTableView.reloadData()
+            viewController.searchView.searchBar.text = searchTerm
+            viewController.searchView.searchBar.placeholder = LocalizationKey.searchBarPlaceholder.value()
+            viewController.searchBarSearchButtonClicked(viewController.searchView.searchBar)
         }
     }
 }

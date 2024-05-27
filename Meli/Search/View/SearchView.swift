@@ -38,8 +38,7 @@ class SearchView: UIView {
     }()
     
     lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.setBarStyle()
+        let searchBar = SearchBar()
         return searchBar
     }()
 
